@@ -7,28 +7,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:700|Ruda" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <title>Spellbook</title>
 </head>
 
 <body>
     <section class="container-fluid">
-        <div class="row">
-            <div class="col-2">
-                <h3 class="text-center">Spell List</h3>
-                <ol id="api-spells">
-                    <!-- list here -->
-                </ol>
+        <header class="row">
+            <div class="col-12 text-center">
+                <img class="w-100" src="assets/images/dnd.png">
+                <h1>Build Your Own Spellbook</h1>
+                <p class="mb-5">Select spells from the list to view their description. Then, add your favorites to your
+                    spellbook!
+                </p>
             </div>
-            <div class="col-4">
-                <h3 class="text-center">Spell</h3>
-                <div id="active-spell">
+        </header>
+        <div class="row">
+            <div class="col-12 col-md-2">
+                <h3 class="text-center my-3">Spell List</h3>
+                <div class="overflow bg-white">
+                    <ol id="api-spells">
+                        <!-- list here -->
+                    </ol>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <h3 class="text-center my-3">Spell</h3>
+                <div id="active-spell" class="overflow">
                     <!-- active here -->
                 </div>
             </div>
-            <div class="col-6">
-                <h3 class="text-center">Spellbook</h3>
-                <div id="my-spellbook">
+            <div class="col-12 col-md-6">
+                <h3 class="text-center my-3">Spellbook</h3>
+                <div id="my-spellbook" class="overflow">
                     <!-- spellbook here -->
                 </div>
             </div>

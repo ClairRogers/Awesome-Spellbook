@@ -12,14 +12,14 @@ export default class Spell {
   getTemplate(button) {
     return `
         <div class="card">
-                            <div class="card-body">
-                              <h5 class="card-title">${this.name}</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Duration: ${this.duration} -- Range: ${this.range}</h6>
-                              <h6>Level: ${this.level}</h6>
-                              <p class="card-text">${this.description}</p>
-                              ${button}
-                            </div>
-                          </div>
+          <div class="card-body">
+            <h5 class="card-title">${this.name}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Duration: ${this.duration} -- Range: ${this.range}</h6>
+            <h6>Level: ${this.level}</h6>
+            <p class="card-text">${this.description}</p>
+            ${button}
+          </div>
+        </div>
         `
   }
 }

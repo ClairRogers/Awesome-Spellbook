@@ -1,3 +1,17 @@
+body {
+  font-family: 'Ruda', sans-serif;
+  background-color: rgb(243, 243, 243);
+}
+
+h3, h1 {
+  font-family: 'Playfair Display SC', serif;
+}
+
 li {
   cursor: pointer;
+}
+
+.overflow {
+  overflow: auto;
+  height: 80vh
 }

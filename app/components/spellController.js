@@ -14,7 +14,7 @@ function drawSpellApi() {
 
 function drawActiveSpell() {
     let spell = _ss.ActiveSpell
-    let button = `<button class="btn btn-success" onclick="app.controllers.spellController.addSpell()">Add to Spellbook</button>`
+    let button = `<button class="btn btn-danger" onclick="app.controllers.spellController.addSpell()">Add to Spellbook</button>`
     let template = spell.getTemplate(button)
     document.querySelector('#active-spell').innerHTML = template
 }
@@ -23,7 +23,7 @@ function drawSpellbook() {
     let template = ''
     let spells = _ss.MySpellBook
     spells.forEach(s => {
-        let button = `<button class="btn btn-danger" onclick="app.controllers.spellController.removeSpell('${s._id}')">Remove</button>`
+        let button = `<button class="btn btn-danger" onclick="app.controllers.spellController.removeSpell('${s._id}')">Remove from Spellbook</button>`
         template += s.getTemplate(button)
     })
     document.querySelector('#my-spellbook').innerHTML = template
