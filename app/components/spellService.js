@@ -7,6 +7,10 @@ let _spellApi = axios.create({
     baseURL: ''
 })
 
+let _sandbox = axios.create({
+    baseURL: 'https://bcw-sandbox.herokuapp.com/api/Clair/spells/'
+})
+
 let _state = {
     spellsApi: [],
     activeSpell: {},
@@ -56,16 +60,27 @@ export default class SpellService {
             })
     }
 
-    showDetails(id) {
-        let spell = _state.mySpellBook.find(s => s._id == id)
-        setState('activeSpell', spell)
+    getMySpellbook() {
+        _sandbox.get('')
+            .then(res => {
+                let data = res.data.data.map(d => new Spell(d))
+                setState('mySpellBook', data)
+            })
     }
 
     addSpell() {
-        let spell = _state.mySpellBook.find(s => s.name == _state.activeSpell.name)
-        if (!spell) {
-            _state.mySpellBook.push(_state.activeSpell)
-            _subscribers.mySpellBook.forEach(fn => fn())
+        let spell = _state.activeSpell
+        if (spell) {
+            _sandbox.post('', spell)
+                .then(res => {
+                    this.getMySpellbook()
+                })
         }
+    }
+    removeSpell(id) {
+        _sandbox.delete(id)
+            .then(res => {
+                this.getMySpellbook()
+            })
     }
 }
